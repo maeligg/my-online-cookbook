@@ -1,0 +1,83 @@
+:root {
+    --color-grey-100: #F9FAFB;
+    --color-grey-200: #F3F4F6;
+    --color-grey-300: #E5E7EB;
+    --color-grey-400: #D1D5DB;
+    --color-grey-500: #9CA3AF;
+    --color-grey-800: #4B5563;
+    --color-grey-900: #3A3A3A;
+    --color-white: #ffffff;
+
+    --box-shadow-light: 0 4px 4px 0 rgba(0, 0, 0, .1);
+    --box-shadow-heavy: 0 4px 8px 4px rgba(0, 0, 0, .1);
+
+    --shadow-md: 0 1px 3px 0 rgba(0,0,0,0.1),0 1px 2px 0 rgba(0,0,0,0.06);
+    --shadow-lg: 0 10px 15px -3px rgba(0,0,0,0.1),0 4px 6px -2px rgba(0,0,0,0.05);
+    --shadow-xl: 0 25px 50px -12px rgba(0,0,0,0.25);
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+}
+
+main {
+    display: flex;
+    flex-direction: column;
+}
+
+// The x-cloak attribute is automatically removed from elements when Alpine initializes. They should not be visible before then to avoid flickering content
+[x-cloak] {
+    display: none !important;
+}
+
+section {
+    padding: 30px 0;
+
+    @include mq(medium) {
+        padding: 60px 0;
+    }
+}
+
+h1 {
+    text-align: center;
+    font-size: clamp(3rem,calc(1rem + 3vw),4rem);
+    margin-bottom: 18px;
+}
+
+h2 {
+    text-align: center;
+    font-size: clamp(2rem,calc(1rem + 2vw),3.4rem);
+    margin-bottom: 42px;
+}
+
+h3 {
+    font-size: clamp(1.6rem,calc(1rem + 1vw),2.6rem);
+    margin-bottom: 18px;
+}
+
+a {
+    color: var(--color-secondary);
+    text-decoration: underline 2px;
+    text-underline-offset: 2px;
+
+    &:hover, &:focus {
+        outline: none;
+        text-decoration: underline 4px;
+    }
+
+    &:focus-visible {
+        outline: 2px solid var(--color-secondary);
+    }
+}
+
+button {
+    cursor: pointer;
+}
+
+input {
+    &:focus {
+        outline: none;
+        box-shadow: 0 0 0 2px var(--color-secondary);
+    }
+}

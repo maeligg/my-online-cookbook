@@ -1,0 +1,28 @@
+.c-tags {
+    display: flex;
+    gap: 12px;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.c-tags__tag {
+    display: inline-flex;
+    padding: 2px 6px;
+    color: var(--color-grey-900);
+    text-decoration: none;
+    border: 1px solid currentColor;
+    border-radius: 8px;
+    font-size: 1rem;
+
+    &:hover, &:focus {
+        text-decoration: none;
+        color: var(--color-white);
+        background-color: var(--color-grey-900);
+    }
+}
+
+.c-tag__tag--selected {
+    color: var(--color-white);
+    background-color: var(--color-grey-900);
+    border: 1px solid currentColor;
+}

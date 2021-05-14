@@ -1,0 +1,32 @@
+@font-face {
+    font-family: 'Vollkorn';
+    font-style: normal;
+    font-weight: 400;
+    font-display: swap;
+    src: local('Vollkorn Regular'),
+        local('Vollkorn-Regular'),
+        url('/fonts/Vollkorn-Regular.woff2') format('woff2'),
+        url('/fonts/Vollkorn-Regular.woff') format('woff');
+}
+
+@font-face {
+    font-family: 'Vollkorn';
+    font-style: normal;
+    font-weight: 600;
+    font-display: swap;
+    src: local('Vollkorn SemiBold'),
+        local('Vollkorn-SemiBold'),
+        url('/fonts/Vollkorn-SemiBold.woff2') format('woff2'),
+        url('/fonts/Vollkorn-SemiBold.woff') format('woff');
+}
+
+body {
+    font-size: 1rem;
+    font-family: Sentinel SSm A, Sentinel SSm B, system-ui, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica, Arial, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol;
+    line-height: 1.5;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'Vollkorn', serif;
+    font-weight: 600;
+}

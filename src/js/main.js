@@ -1,0 +1,2 @@
+import 'alpinejs';
+import './search';

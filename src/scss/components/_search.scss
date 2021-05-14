@@ -1,0 +1,141 @@
+.c-search__search-toggle {
+    margin-left: 20px;
+    padding: 10px;
+    display: flex;
+    background-color: transparent;
+    border: none;
+
+    > * {
+        display: flex;
+    }
+}
+
+.c-search__search-wrapper {
+    font-weight: normal;
+
+    > * + * {
+        margin-top: 12px;
+    }
+}
+
+.c-search__search-wrapper:not(.c-search__search-wrapper--home) {
+    position: absolute;
+    top: 60px;
+    right: 0;
+    width: 100%;
+    background-color: var(--color-white);
+    padding: 24px;
+    border: 1px solid var(--color-grey-300);
+    border-radius: 6px;
+    box-shadow: var(--shadow-xl);
+    font-size: 1rem;
+
+    @include mq(medium) {
+        max-width: 500px;
+    }
+}
+
+.c-search__label {
+    display: block;
+}
+
+.c-search__label--home {
+    text-align: center;
+    font-weight: bold;
+    font-size: 1.2rem;
+}
+
+.c-search__input-wrapper {
+    position: relative;
+}
+
+.c-search__input-wrapper--home {
+    position: relative;
+    width: 100%;
+    max-width: 500px;
+    margin-left: auto;
+    margin-right: auto;
+
+    > svg {
+        position: absolute;
+        left: 16px;
+        top: 16px;
+    }
+}
+
+.c-search__input {
+    width: 100%;
+    padding: 4px 12px;
+    border: 2px solid var(--color-grey-900);
+    border-radius: 30px;
+}
+
+.c-search__input--home {
+    padding: 12px 18px 12px 46px;
+    width: 100%;
+    padding: 12px 18px 12px 46px;
+    border: 2px solid var(--color-grey-900);
+}
+
+.c-search__close-button {
+    display: flex;
+    position: absolute;
+    right: 12px;
+    top: 8px;
+    padding: 0;
+    border: none;
+    background-color: transparent;
+
+    svg {
+        width: 12px;
+    }
+}
+
+.c-search__close-button--home {
+    right: 16px;
+    top: 16px;
+
+    svg {
+        width: 17px;
+    }
+}
+
+.c-search__search-results {
+    > * + * {
+        margin-top: 10px;
+    }
+}
+
+.c-search__search-results {
+    margin-top: 30px;
+}
+
+.c-search__search-result-link--home {
+    font-size: 1.2rem;
+}
+
+.c-search__search-result-ingredients {
+    font-style: italic;
+}
+
+.c-search__search-result-ingredients--home {
+    font-size: 1rem;
+}
+
+.c-search__random-link {
+    display: block;
+    width: max-content;
+    margin: 10px auto 0;
+    padding: 6px 10px;
+    border: none;
+    border-radius: 4px;
+    background-color: var(--color-grey-900);
+    color: var(--color-white);
+    font-weight: bold;
+    text-decoration: none;
+
+    &:hover, &:focus {
+        text-decoration: none;
+        background-color: var(--color-grey-800);
+    }
+}

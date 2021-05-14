@@ -1,0 +1,75 @@
+---
+bodyClass: c-home
+---
+
+{% extends 'layouts/base.njk' %}
+
+{% block content %}
+    <section>
+        <div class="l-container">
+            <h1>{{title}} <span class="c-home__title-author">{{ site.author }}</span></h1>
+        </div>
+    </section>
+
+    <section>
+        <div class="l-container">
+            {% set homeSearch = true %}
+            {% include "components/search.njk" %}
+            
+            <a x-data="getRandomRecipe()" x-init="initRandomRecipe()" x-bind:href="url" class="c-search__random-link">🔀 {{ randomRecipe }}</a>
+        </div>
+    </section>
+
+    {% if collections["Favourite ⭐"] %}}
+        <section class="u-bgc-grey-100">
+            <div class="l-container">
+                <h2>{{ favouriteRecipes }}</h2>
+                <div class="c-card__wrapper">
+                    {% set favouriteRecipes = collections["Favourite ⭐"] | limit(4) %}
+                    {% for recipe in favouriteRecipes %}
+                        <a class="c-card" href="{{ recipe.url }}">
+                            {% recipeimage recipe.fileSlug, "c-card__image", recipe.data.title, "(min-width: 1150px) 25vw, (min-width: 850px) 33vw, (min-width: 550px) 50vw, 100vw" %}
+                            <div class="c-card__info">
+                                <div>
+                                    {% for tag in recipe.data.tags %}
+                                        {{ tag | onlyEmoji | safe }}
+                                    {% endfor %}
+                                </div>
+                                {% if recipe.data.time %}
+                                    <div class="card__time">
+                                        {% include 'icons/time.svg' %}
+                                        {{ recipe.data.time }}
+                                    </div>
+                                {% endif %}
+                            </div>
+                            <div class="c-card__title-wrapper">
+                                <h3 class="c-card__title">{{ recipe.data.title }}</h3>
+                            </div>
+                        </a>
+                    {% endfor %}
+                </div>
+            </div>
+        </section>
+    {% endif %}
+
+    <script>
+        function getRandomRecipe() {
+            return {
+                url: '',
+                initRandomRecipe() {
+                    const random = (recipes) => recipes[Math.floor(Math.random() * recipes.length)];
+
+                    if (sessionStorage.getItem('searchResults')) {
+                        this.url = random(JSON.parse(sessionStorage.getItem('searchResults'))).url;
+                    } else {
+                        fetch('/search.json').then(res => res.json()).then(res => {
+                            sessionStorage.setItem('searchResults', JSON.stringify(res));
+                            this.url = random(res).url;
+                        });
+                    }
+                }
+
+            }
+        }
+    </script>
+{% endblock %}

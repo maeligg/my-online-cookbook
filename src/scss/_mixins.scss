@@ -1,0 +1,27 @@
+$breakpoints-map: (
+  small: "all and (min-width: 576px)",
+  medium: "all and (min-width: 768px)",
+  large: "all and (min-width: 1200px)"
+);
+
+// -------------------------------------
+// Mixin
+// -------------------------------------
+@mixin mq($breakpoint-name) {
+  // sanitize variable
+  $breakpoint-name: unquote($breakpoint-name);
+
+  // check if passed name is in $breakpoints-map
+  @if map-has-key($breakpoints-map, $breakpoint-name) {
+    $breakpoint-query: map-get($breakpoints-map, $breakpoint-name);
+
+    // write media query
+    @media #{$breakpoint-query} {
+      @content;
+    }
+
+    // throw error if passed parameter is not a key in $breakpoints-map
+  } @else {
+    @error "#{$breakpoint-name} is not a key in $breakpoints-map";
+  }
+}

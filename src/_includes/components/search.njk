@@ -1,0 +1,72 @@
+<div class="c-search__search-wrapper {{ 'c-search__search-wrapper--home' if homeSearch }}" x-data="{ searchResults: [], searchInput: '', matches: [] }">
+    <label for="{{ 'search-home' if homeSearch else 'search' }}" class="c-search__label {{ 'c-search__label--home' if homeSearch }}">{{ site.searchLabel }} :</label>
+    <div class="c-search__input-wrapper {{ 'c-search__input-wrapper--home' if homeSearch }}">
+        <input type="text" id="{{ 'search-home' if homeSearch else 'search' }}" class="c-search__input {{ 'c-search__input--home' if homeSearch }}" x-model="searchInput" @focus="
+            if (!window.searchResults) {
+                fetch('/search.json').then(res => res.json()).then(res => {
+                    window.searchResults = res;
+                    searchResults = window.searchResults;
+                });
+            } else {
+                searchResults = window.searchResults;
+            }
+
+            if (sessionStorage.getItem('searchResults')) {
+                searchResults = JSON.parse(sessionStorage.getItem('searchResults'));
+            } else {
+                fetch('/search.json').then(res => res.json()).then(res => {
+                    sessionStorage.setItem('searchResults', JSON.stringify(res));
+                    searchResults = random(res);
+                });
+            }
+        " @input="
+            matches = [];
+
+            if (searchInput.length < 3) { return };
+    
+            searchResults.forEach(recipe => {
+                const matchTitle = recipe.title.toLowerCase().includes(searchInput);
+                const matchIngredient = recipe.ingredients.find(ingredient => ingredient.toLowerCase().includes(searchInput));
+        
+                if (!matchTitle && !matchIngredient) { return };
+        
+                const match = {...recipe};
+                if (matchTitle) { match.matchTitle = matchTitle };
+                if (matchIngredient) { match.matchIngredient = matchIngredient };
+        
+                matches.push(match)
+            });
+        ">
+        {% if homeSearch %}{% include "icons/search.svg" %}{% endif %}
+        <button class="c-search__close-button {{ 'c-search__close-button--home' if homeSearch }}" x-show="searchInput" @click="
+            searchInput = '';
+            matches = [];
+        " x-cloak>
+            <span class="u-sr-only">Close</span>
+            {% include "icons/close.svg" %}
+        </button>
+    </div>
+
+    <template x-if="matches.length">
+        <ul class="c-search__search-results">
+            <template x-for="(match, index) in matches" :key="index">
+                <li>
+                    <a x-bind:href="match.url" x-html="highlightText(match.title, searchInput)" class="c-search__search-result-link {{ 'c-search__search-result-link--home' if homeSearch }}"></a>
+                    <template x-if="match.matchIngredient">
+                        <p class="c-search__search-result-ingredients {{ 'c-search__search-result-ingredients--home' if homeSearch }}" >
+                            Contains: <span x-html="highlightText(match.matchIngredient, searchInput)"></span>
+                        </p>
+                    </template>
+                </li>
+            </template>
+        </ul>
+    </template>
+</div>
+
+<script>
+    function highlightText (string, subString) {
+        const index = string.toLowerCase().indexOf(subString.toLowerCase());
+        if (index === -1) return string;
+        return string.substring(0, index) + '<span class="u-highlight">' + string.substring(index, index + subString.length) + '</span>' + string.substring(index + subString.length);
+    }
+</script>

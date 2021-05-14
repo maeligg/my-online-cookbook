@@ -1,0 +1,72 @@
+{% extends 'layouts/base.njk' %}
+
+{% block content %}
+    {% recipeimage page.fileSlug, "c-recipe__header-image", title, "100vw" %}
+    <h1 class="c-recipe__title">{{ title }}</h1>
+    <section>
+        <div class="l-container">
+            <div class="c-recipe__recipe-content-wrapper">
+                <div class="c-recipe__tag-list">
+                    {% for tag in tags %}
+                        <a class="c-tags__tag" href="/tags/{{ tag | noEmoji | slug }}">{{ tag }}</a>
+                    {% endfor %}
+                </div>
+                <div class="c-recipe__ingredients-wrapper" x-data="{currentServings: {{ servings }}, ingredients: '{{ ingredients }}'.split(',') }">
+                    {% if time or servings %}
+                        <div class="c-recipe__additional-info">
+                            {% if time %}
+                                <p>{% include "icons/time.svg" %}{{ time }}</p>
+                            {% endif %}
+                            {% if servings %}
+                                <p>
+                                    <template x-if="currentServings > 1">
+                                        <button @click="currentServings -= 1" class="c-recipe__serving-button">
+                                            -
+                                            <span class="u-sr-only">Remove 1 serving</span>
+                                        </button>
+                                    </template>
+                                    <span x-text="currentServings"></span>
+                                    <button @click="currentServings += 1" class="c-recipe__serving-button">
+                                        +
+                                        <span class="u-sr-only">Add 1 serving</span>
+                                    </button>
+                                    <span> servings</span>
+                                </p>
+                            {% endif %}
+                        </div>
+                    {% endif %}
+
+                    <h3>Ingredients</h3>
+                    <template x-if="currentServings">
+                        <ul class="c-recipe__ingredients-list">
+                            <template x-for="(ingredient, index) in ingredients" :key="index">
+                                <li x-text="adaptQuantity(ingredient, {{servings}}, currentServings)"></li>
+                            </template>
+                        </ul>
+                    </template>
+
+                    <template x-if="!currentServings">
+                        <ul class="c-recipe__ingredients-list">
+                            {% for ingredient in ingredients %}
+                                <li>{{ ingredient }}</li>
+                            {% endfor %}
+                        </ul>
+                    </template>
+                </div>
+
+                <div class="c-recipe__instructions-wrapper">
+                    {% if sourceLabel and sourceURL %}
+                        <p>Source : <a href="{{ sourceURL }}">{{ sourceLabel }}</a></p>
+                    {% endif %}
+                    {{ content | safe }}
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <script>
+        function adaptQuantity (ingredient, originalServings, currentServings) {
+            return ingredient.replace(/(\d|\.|,)+/, match => Number(Math.round(parseFloat(match) * currentServings / originalServings + 'e' + 2) + 'e-' + 2));
+        }
+    </script>
+{% endblock %}

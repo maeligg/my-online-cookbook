@@ -1,0 +1,73 @@
+.c-tags__label {
+    margin-bottom: 6px;
+    text-align: center;
+}
+
+.c-nav {
+    position: relative;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: var(--text-sm);
+    font-weight: 600;
+    font-size: 1.2rem;
+}
+
+.c-nav__list {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+}
+
+.c-nav__logo svg {
+    box-shadow: var(--box-shadow-light);
+}
+
+.c-nav__home {
+    display: flex;
+    align-items: center;
+    color: var(--color-grey-900);
+    text-decoration: none;
+
+    &:hover, &:focus {
+        text-decoration: none;
+    }
+}
+
+.c-nav__home-text {
+    margin-left: 18px;
+
+    @media all and (max-width: 576px) {
+        position:absolute;
+        left:-10000px;
+        top:auto;
+        width:1px;
+        height:1px;
+        overflow:hidden;
+    }
+}
+
+.c-nav__nav-item {
+    padding: 4px 8px;
+    color: var(--color-grey-900);
+    text-decoration: none;
+
+    &:hover, &:focus {
+        text-decoration: none;
+        background-color: var(--color-grey-900);
+        color: var(--color-white);
+        border-radius: 6px;
+    }
+}
+
+.c-nav__nav-item--active {
+    background-color: var(--color-grey-900);
+    color: var(--color-white);
+    border-radius: 6px;
+    // text-decoration: underline 2px currentColor;
+
+    &:hover, &:focus {
+        // text-decoration: underline 4px currentColor;
+    }
+}

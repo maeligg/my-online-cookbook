@@ -1,0 +1,16 @@
+<nav>
+    <ul class="c-tags">
+        {% if page.fileSlug == "recipes" %}
+            <span class="c-tags__tag c-tag__tag--selected">All recipes</span>
+        {% else %}
+            <a class="c-tags__tag" href="/recipes">All recipes</a>
+        {% endif %}
+        {% for tagItem in collections.tagList %}
+            {% if selectedTag == tagItem %}
+                <span class="c-tags__tag c-tag__tag--selected">{{ tagItem }}</span>
+            {% else %}
+                <a class="c-tags__tag" href="/tags/{{ tagItem | noEmoji | slug }}">{{ tagItem }}</a>
+            {% endif %}
+        {% endfor %}
+    </ul>
+</nav>

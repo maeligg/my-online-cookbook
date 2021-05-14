@@ -1,0 +1,42 @@
+{% extends 'layouts/base.njk' %}
+
+{% block content %}
+    <main>
+        <section>
+            <div class="l-container">
+                <h1>{{ selectedTag }}{{ " " if selectedTag }}{{title}}</h1>
+
+                {% include 'components/taglist.njk' %}
+            </div>
+        </section>
+        <section class="u-bgc-grey-100">
+            <div class="l-container">
+                <div class="c-card__wrapper">
+                    {% for recipe in collections.recipes %}
+                        {% if not selectedTag or selectedTag in recipe.data.tags %} {# If we don't have a selectedTag, we are on the all recipes page #}
+                            <a class="c-card" href="{{ recipe.url }}">
+                                {% recipeimage recipe.fileSlug, "c-card__image", recipe.data.title, "(min-width: 1150px) 25vw, (min-width: 850px) 33vw, (min-width: 550px) 50vw, 100vw" %}
+                                <div class="c-card__info">
+                                    <div>
+                                        {% for tag in recipe.data.tags %}
+                                            {{ tag | onlyEmoji | safe }}
+                                        {% endfor %}
+                                    </div>
+                                    {% if recipe.data.time %}
+                                        <div class="card__time">
+                                            {% include 'icons/time.svg' %}
+                                            {{ recipe.data.time }}
+                                        </div>
+                                    {% endif %}
+                                </div>
+                                <div class="c-card__title-wrapper">
+                                    <h3 class="c-card__title">{{ recipe.data.title }}</h3>
+                                </div>
+                            </a>
+                        {% endif %}
+                    {% endfor %}
+                </div>
+            </div>
+        </section>
+    </main>
+{% endblock %}

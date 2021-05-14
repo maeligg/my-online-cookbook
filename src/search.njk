@@ -1,0 +1,13 @@
+---
+permalink: search.json
+---
+
+[
+    {% for recipe in collections.recipes %}
+        {
+            "title" : "{{ recipe.data.title }}",
+            "url" : "{{ recipe.url }}",
+            "ingredients" : [{% for ingredient in recipe.data.ingredients %}"{{ingredient}}"{% if not loop.last %},{% endif %}{% endfor %}]
+        }{% if not loop.last %},{% endif %}
+    {% endfor %}
+]
