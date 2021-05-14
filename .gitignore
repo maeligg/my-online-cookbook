@@ -1,3 +1,4 @@
 .cache
 dist/
-node_modules
+src/_includes/css/
+node_modules/
