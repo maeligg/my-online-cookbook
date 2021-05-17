@@ -26,3 +26,4 @@ collections:
         widget: "list"
         summary: "{{fields.ingredient}}"
         field: {label: "Ingredient", name: "ingredient", widget: string}
+      - {label: "Body", name: "body", widget: "markdown"}
