@@ -1,21 +1,22 @@
 ---
 title: Simple brownies
+image: /recipe-images/brownies.jpg
 tags:
-    - Sweet 🍬
-    - Cake 🍰
-    - Sharable
-    - Favourite ⭐
+  - Sweet 🍬
+  - Cake 🍰
+  - Sharable
+  - Favourite ⭐
 time: 45 min
+servings: 4
 sourceLabel: BBC good food
 sourceURL: https://www.bbc.co.uk/food/recipes/richchocolatebrownie_1933/
-servings: 4
 ingredients:
-    - 225g butter (preferably unsalted)
-    - 450g caster sugar
-    - 140g dark chocolate broken into pieces
-    - 5 free-range medium eggs
-    - 110g plain flour
-    - 55g cocoa powder
+  - 225g butter (preferably unsalted)
+  - 450g caster sugar
+  - 140g dark chocolate broken into pieces
+  - 5 free-range medium eggs
+  - 110g plain flour
+  - 55g cocoa powder
 ---
 
 Heat the oven to 190C/170C Fan/Gas 5. Line a 20x30cm baking tin with baking paper.
