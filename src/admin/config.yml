@@ -1,0 +1,19 @@
+backend:
+  name: git-gateway
+  branch: main
+media_folder: "src/recipe-images"
+public_folder: "/recipe-images"
+
+collections:
+  - name: "recipes"
+    label: "Recipes"
+    folder: "src/recipes"
+    create: true
+    fields:
+      - {label: "Title", name: "title", widget: "string"}
+      - {label: "Tags", name: "tags", widget: "list"}
+      - {label: "Preparation time", name: "time", widget: "string"}
+      - {label: "Number of servings", name: "servings", widget: "number"}
+      - {label: "Source of the recipe", name: "sourceLabel", widget: "string"}
+      - {label: "URL of the source of the recipe", name: "sourceURL", widget: "string"}
+      - {label: "Ingredients", name: "ingredients", widget: "list"}
