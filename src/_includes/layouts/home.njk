@@ -28,7 +28,7 @@ bodyClass: c-home
                     {% set favouriteRecipes = collections["Favourite ⭐"] | limit(4) %}
                     {% for recipe in favouriteRecipes %}
                         <a class="c-card" href="{{ recipe.url }}">
-                            {% recipeimage recipe.fileSlug, "c-card__image", recipe.data.title, "(min-width: 1150px) 25vw, (min-width: 850px) 33vw, (min-width: 550px) 50vw, 100vw" %}
+                            {% recipeimage recipe.data.image, "c-card__image", recipe.data.title, "(min-width: 1150px) 25vw, (min-width: 850px) 33vw, (min-width: 550px) 50vw, 100vw" %}
                             <div class="c-card__info">
                                 <div>
                                     {% for tag in recipe.data.tags %}

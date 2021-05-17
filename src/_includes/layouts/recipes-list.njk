@@ -15,7 +15,7 @@
                     {% for recipe in collections.recipes %}
                         {% if not selectedTag or selectedTag in recipe.data.tags %} {# If we don't have a selectedTag, we are on the all recipes page #}
                             <a class="c-card" href="{{ recipe.url }}">
-                                {% recipeimage recipe.fileSlug, "c-card__image", recipe.data.title, "(min-width: 1150px) 25vw, (min-width: 850px) 33vw, (min-width: 550px) 50vw, 100vw" %}
+                                {% recipeimage recipe.data.image, "c-card__image", recipe.data.title, "(min-width: 1150px) 25vw, (min-width: 850px) 33vw, (min-width: 550px) 50vw, 100vw" %}
                                 <div class="c-card__info">
                                     <div>
                                         {% for tag in recipe.data.tags %}

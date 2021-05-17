@@ -11,7 +11,12 @@ collections:
     create: true
     fields:
       - {label: "Title", name: "title", widget: "string"}
-      - {label: "Tags", name: "tags", widget: "list"}
+      - {label: "Image", name: "image", widget: "image"}
+      - label: "Tags"
+        name: "tags"
+        widget: "list"
+        summary: "{{fields.tag}}"
+        field: {label: "Tag", name: "tag", widget: string}
       - {label: "Preparation time", name: "time", widget: "string"}
       - {label: "Number of servings", name: "servings", widget: "number"}
       - {label: "Source of the recipe", name: "sourceLabel", widget: "string"}
@@ -19,4 +24,5 @@ collections:
       - label: "Ingredients"
         name: "ingredients"
         widget: "list"
-        field: {label: Ingredient, name: ingredient, widget: string}
+        summary: "{{fields.ingredient}}"
+        field: {label: "Ingredient", name: "ingredient", widget: string}
