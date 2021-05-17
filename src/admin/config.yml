@@ -16,4 +16,7 @@ collections:
       - {label: "Number of servings", name: "servings", widget: "number"}
       - {label: "Source of the recipe", name: "sourceLabel", widget: "string"}
       - {label: "URL of the source of the recipe", name: "sourceURL", widget: "string"}
-      - {label: "Ingredients", name: "ingredients", widget: "list"}
+      - label: "Ingredients"
+        name: "ingredients"
+        widget: "list"
+        field: {label: Ingredient, name: ingredient, widget: string}
