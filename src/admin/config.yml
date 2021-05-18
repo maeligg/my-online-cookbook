@@ -17,7 +17,7 @@ collections:
         widget: "list"
         required: false
         summary: "{{fields.tag}}"
-        field: {label: "Tag", name: "tag", widget: string}
+        field: {label: "Tag", name: "tag", widget: "string"}
       - {label: "Preparation time", name: "time", widget: "string", required: false}
       - {label: "Number of servings", name: "servings", widget: "number", required: false}
       - {label: "Source of the recipe", name: "sourceLabel", widget: "string", required: false}
@@ -26,5 +26,19 @@ collections:
         name: "ingredients"
         widget: "list"
         summary: "{{fields.ingredient}}"
-        field: {label: "Ingredient", name: "ingredient", widget: string}
+        field: {label: "Ingredient", name: "ingredient", widget: "string"}
       - {label: "Body", name: "body", widget: "markdown"}
+  - name: "settings"
+    label: "Settings"
+    files:
+      - name: "site"
+        label: "Site settings"
+        delete: false
+        file: "src/_data/site.json"
+        fields:
+          - {label: "Site name", name: "name", widget: "string"}
+          - {label: "Site meta description", name: "metaDescription", widget: "string", hint: "used for SEO"}
+          - {label: "Author", name: "author", widget: "string"}
+          - {label: "Primary color", name: "primaryColor", widget: "color", hint: "make sure to choose a color that is light enough to display as a background behind dark text"}
+          - {label: "Secondary color", name: "secondaryColor", widget: "color", hint: "used for links and focus styles"}
+          - {label: "Search label", name: "searchLabel", widget: "string"}

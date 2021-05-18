@@ -42,10 +42,6 @@ module.exports = config => {
         return util.inspect(value);
     });
 
-    config.addFilter('dateToYear', function (date) {
-        return date.getFullYear();
-    });
-
     config.addFilter('noEmoji', function(value) {
         return value.replace(emojiRegex, '').trim();
     });
@@ -90,6 +86,7 @@ module.exports = config => {
     }
 
     config.addNunjucksAsyncShortcode('recipeimage', imageShortcode);
+    config.addShortcode('year', () => `${new Date().getFullYear()}`);
 
     return {
         dir: {
