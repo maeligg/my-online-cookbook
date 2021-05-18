@@ -1,6 +1,6 @@
 ---
 title: Garlic aïoli
-image: /recipe-images/aioli.jpg
+image: /recipe-images/garlic-aioli.jpg
 tags:
   - Vegetarian 🌿
   - Sauce & dips
