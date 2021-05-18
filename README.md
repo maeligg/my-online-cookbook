@@ -7,7 +7,7 @@ My Online Cookbook is a starter kit to create your own website of recipes, using
 Demo (this is what you get out of the box) : [https://myonlinecookbook.netlify.app/](https://myonlinecookbook.netlify.app/)
 
 Get started now by forking the project or deploy to Netlify :
-![Deploy to Netlify](https://www.netlify.com/img/deploy/button.svg)[https://app.netlify.com/start/deploy?repository=https://github.com/maeligg/my-online-cookbook&stack=cms]
+[![Deploy to Netlify](https://www.netlify.com/img/deploy/button.svg)](https://app.netlify.com/start/deploy?repository=https://github.com/maeligg/my-online-cookbook&stack=cms)
 
 ## Features
 
