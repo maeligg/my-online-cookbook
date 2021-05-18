@@ -15,12 +15,13 @@ collections:
       - label: "Tags"
         name: "tags"
         widget: "list"
+        required: false
         summary: "{{fields.tag}}"
         field: {label: "Tag", name: "tag", widget: string}
-      - {label: "Preparation time", name: "time", widget: "string"}
-      - {label: "Number of servings", name: "servings", widget: "number"}
-      - {label: "Source of the recipe", name: "sourceLabel", widget: "string"}
-      - {label: "URL of the source of the recipe", name: "sourceURL", widget: "string"}
+      - {label: "Preparation time", name: "time", widget: "string", required: false}
+      - {label: "Number of servings", name: "servings", widget: "number", required: false}
+      - {label: "Source of the recipe", name: "sourceLabel", widget: "string", required: false}
+      - {label: "URL of the source of the recipe", name: "sourceURL", widget: "string", required: false}
       - label: "Ingredients"
         name: "ingredients"
         widget: "list"
