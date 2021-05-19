@@ -61,8 +61,9 @@ module.exports = config => {
         return value.toLowerCase();
     });
 
-    config.addFilter('asArray', function(value) {
-        return value ? [...value] : []
+    // This workaround is needed so we can transform it back into an array with Alpine (we can't split on "," as it can be included within the items)
+    config.addFilter('arrayToString', function(value) {
+        return value.join('£');
     });
 
     /* Shortcodes */

@@ -11,7 +11,7 @@ sourceLabel: BBC good food
 sourceURL: https://www.bbcgoodfood.com/recipes/courgette-lemon-risotto/
 ingredients:
   - 50g butter
-  - 1 onion finely chopped
+  - 1 onion, finely chopped
   - 1 large garlic clove crushed
   - 180g risotto rice
   - 1 vegetable stock cube
