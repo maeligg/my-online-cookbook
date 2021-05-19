@@ -42,3 +42,12 @@ collections:
           - {label: "Primary color", name: "primaryColor", widget: "color", hint: "make sure to choose a color that is light enough to display as a background behind dark text"}
           - {label: "Secondary color", name: "secondaryColor", widget: "color", hint: "used for links and focus styles"}
           - {label: "Search label", name: "searchLabel", widget: "string"}
+  - name: "pages"
+    label: "Pages"
+    files:
+    - name: "about"
+      label: "About page"
+      file: "src/about.md"
+      fields:
+        - {label: "Title", name: "title", widget: "string"}
+        - {label: "Body", name: "body", widget: "markdown"}

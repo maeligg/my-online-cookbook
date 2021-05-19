@@ -24,6 +24,7 @@ body {
 main {
     display: flex;
     flex-direction: column;
+    margin-bottom: 30px;
 }
 
 // The x-cloak attribute is automatically removed from elements when Alpine initializes. They should not be visible before then to avoid flickering content
