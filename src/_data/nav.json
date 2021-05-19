@@ -1,10 +1,12 @@
-[
-    {
-        "text": "All recipes",
-        "url": "/recipes/"
-    },
-    {
-        "text": "About",
-        "url": "/about/"
-    }
-]
+{
+    "items": [
+        {
+            "text": "All recipes",
+            "url": "/recipes/"
+        },
+        {
+            "text": "About",
+            "url": "/about/"
+        }
+    ]
+}

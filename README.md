@@ -20,7 +20,7 @@ The kit includes a powerful live search system offering a UX on-par with third-p
 
 
 ### 🧰 Lightweight & easily extendable
-Easily customise the theme color and other site attributes using the global data files, or dive into the code and change anything easily. The CSS is authored using [Sass](https://sass-lang.com/) and following the [BEM](https://en.bem.info/) naming convention. JavaScript is added where needed using [Alpine](https://github.com/alpinejs/alpine) and following a component-based approach. Images are processed and optimised at build-time using the [Eleventy image plugin](https://www.11ty.dev/docs/plugins/image/). Apart from Alpine, there are no run-time dependencies, making the site both extremely lightweight and easy to pick up and modify.
+Easily customise the theme color and other site attributes using the global data files, or dive into the code and change anything. The CSS is authored using [Sass](https://sass-lang.com/) and following the [BEM](https://en.bem.info/) naming convention. JavaScript is added where needed using [Alpine](https://github.com/alpinejs/alpine) and following a component-based approach. Images are processed and optimised at build-time using the [Eleventy image plugin](https://www.11ty.dev/docs/plugins/image/). Apart from Alpine, there are no run-time dependencies, making the site both extremely lightweight and easy to pick up and modify.
 
 
 ## Run the site locally

@@ -3,6 +3,7 @@
     object-fit: cover;
     height: 40vh;
     min-height: 300px;
+    background-color: var(--color-grey-500); // fallback while image is loading
 }
 
 .c-recipe__title {

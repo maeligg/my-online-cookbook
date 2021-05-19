@@ -6,7 +6,7 @@
                 <span class="c-nav__nav-item c-nav__home-text {{ 'c-nav__nav-item--active' if page.url == '/' }}">Home</span>
             </a>
         </li>
-        {% for navItem in nav %}
+        {% for navItem in nav.items %}
             <li>
                 <a href="{{ navItem.url }}" class="c-nav__nav-item {{ 'c-nav__nav-item--active' if page.url == navItem.url }}">{{ navItem.text }}</a>
             </li>
