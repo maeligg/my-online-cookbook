@@ -11,7 +11,7 @@
                         <a class="c-tags__tag" href="/tags/{{ tag | noEmoji | slug }}">{{ tag }}</a>
                     {% endfor %}
                 </div>
-                <div class="c-recipe__ingredients-wrapper" x-data="{currentServings: {{ servings }}, ingredients: '{{ ingredients | arrayToString }}'.split('£') }">
+                <div class="c-recipe__ingredients-wrapper" x-data='{currentServings: {{ servings }}, ingredients: "{{ ingredients | arrayToString }}".split("£") }'>
                     {% if time or servings %}
                         <div class="c-recipe__additional-info">
                             {% if time %}
