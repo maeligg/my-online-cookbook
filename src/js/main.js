@@ -1,2 +1,0 @@
-import 'alpinejs';
-import './search';
