@@ -32,7 +32,7 @@ bodyClass: c-home
                             <div class="c-card__info">
                                 <div>
                                     {% for tag in recipe.data.tags %}
-                                        <abbr class="c-card__tag-abbr" title="{{ tag | noEmoji }}">{{ tag | onlyEmoji }}</abbr>
+                                        <abbr class="c-card__tag-abbr" title="{{ tag | noEmoji }}">{{ tag | onlyEmoji | safe }}</abbr>
                                     {% endfor %}
                                 </div>
                                 {% if recipe.data.time %}
