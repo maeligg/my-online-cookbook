@@ -46,6 +46,10 @@
     background-color: var(--color-primary);
 }
 
+.c-card__tag-abbr {
+    text-decoration: none;
+}
+
 .c-card__tag-first-letter {
     width: 22px;
     height: 22px;
