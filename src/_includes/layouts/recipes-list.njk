@@ -6,7 +6,9 @@
             <div class="l-container">
                 <h1>{{ selectedTag }}{{ " " if selectedTag }}{{title}}</h1>
 
-                {% include 'components/taglist.njk' %}
+                {% if not selectedTag %}
+                    {% include 'components/taglist.njk' %}
+                {% endif %}
             </div>
         </section>
         <section class="u-bgc-grey-100">
@@ -38,5 +40,12 @@
                 </div>
             </div>
         </section>
+        {% if selectedTag %}
+            <section>
+                <div class="l-container">
+                    {% include 'components/taglist.njk' %}
+                </div>
+            </section>  
+        {% endif %}
     </main>
 {% endblock %}

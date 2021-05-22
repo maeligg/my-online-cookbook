@@ -23,7 +23,7 @@ bodyClass: c-home
     {% if collections["Favourite ⭐"] %}
         <section class="u-bgc-grey-100">
             <div class="l-container">
-                <h2>{{ favouriteRecipes }}</h2>
+                <h2 class="u-mb-large">{{ favouriteRecipes }}</h2>
                 <div class="c-card__wrapper">
                     {% set favouriteRecipes = collections["Favourite ⭐"] | limit(4) %}
                     {% for recipe in favouriteRecipes %}

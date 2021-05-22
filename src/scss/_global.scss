@@ -40,21 +40,22 @@ section {
     }
 }
 
+h1, h2, h3, h4, h5, h6 {
+    margin: 0;
+}
+
 h1 {
     text-align: center;
     font-size: clamp(3rem,calc(1rem + 3vw),4rem);
-    margin-bottom: 18px;
 }
 
 h2 {
     text-align: center;
     font-size: clamp(2rem,calc(1rem + 2vw),3.4rem);
-    margin-bottom: 42px;
 }
 
 h3 {
     font-size: clamp(1.6rem,calc(1rem + 1vw),2.6rem);
-    margin-bottom: 18px;
 }
 
 a {
