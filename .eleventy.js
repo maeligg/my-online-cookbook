@@ -11,7 +11,6 @@ module.exports = config => {
     config.addPassthroughCopy('src/img');
     config.addPassthroughCopy('src/fonts');
     config.addPassthroughCopy('src/admin');
-    config.addPassthroughCopy('netlify.toml');
 
 
     /* Collections */
