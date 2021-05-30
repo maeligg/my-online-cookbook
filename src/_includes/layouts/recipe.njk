@@ -56,7 +56,7 @@
 
                 <div class="c-recipe__instructions-wrapper u-free-text">
                     {% if sourceLabel and sourceURL %}
-                        <p>Source : <a href="{{ sourceURL }}">{{ sourceLabel }}</a></p>
+                        <p>Source : <a href="{{ sourceURL }}" target="_blank" rel="noopener">{{ sourceLabel }}</a></p>
                     {% endif %}
                     {{ content | safe }}
                 </div>
