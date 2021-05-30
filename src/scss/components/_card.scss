@@ -5,6 +5,7 @@
 }
 
 .c-card {
+    position: relative;
     width: 100%;
     max-width: 600px;
     margin: 0 auto;
@@ -15,18 +16,6 @@
     box-shadow: var(--shadow-md);
     text-decoration: none;
     color: var(--color-grey-900);
-
-    &:hover, &:focus {
-        outline: none;
-        box-shadow: var(--shadow-lg);
-        color: var(--color-grey-900);
-        text-decoration: none;
-    }
-
-    &:focus-visible {
-        box-shadow: 0 0 0 2px var(--color-secondary),
-        var(--shadow-lg);
-    }
 }
 
 .c-card__image {
@@ -77,6 +66,35 @@
     display: flex;
     align-items: center;
     padding: 12px 18px;
+    text-decoration: none;
+    color: var(--color-grey-900);
+
+    &::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        height: 100%;
+        width: 100%;
+        border-radius: 20px;
+    }
+
+    &:hover, &:focus {
+        text-decoration: none;
+        
+        &::before {
+            outline: none;
+            box-shadow: var(--shadow-lg);
+            color: var(--color-grey-900);
+            text-decoration: none;
+        }
+    }
+
+    &:focus-visible {
+        &::before {
+            box-shadow: 0 0 0 2px var(--color-secondary), var(--shadow-lg);
+        }
+    }
 }
 
 .c-card__title {

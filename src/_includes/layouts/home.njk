@@ -27,7 +27,7 @@ bodyClass: c-home
                 <div class="c-card__wrapper">
                     {% set favouriteRecipes = collections["Favourite ⭐"] | limit(4) %}
                     {% for recipe in favouriteRecipes %}
-                        <a class="c-card" href="{{ recipe.url }}">
+                        <div class="c-card">
                             {% recipeimage recipe.data.image, "c-card__image", recipe.data.title, "(min-width: 1150px) 25vw, (min-width: 850px) 33vw, (min-width: 550px) 50vw, 100vw" %}
                             <div class="c-card__info">
                                 <div>
@@ -42,10 +42,10 @@ bodyClass: c-home
                                     </div>
                                 {% endif %}
                             </div>
-                            <div class="c-card__title-wrapper">
+                            <a class="c-card__title-wrapper" href="{{ recipe.url }}">
                                 <h3 class="c-card__title">{{ recipe.data.title }}</h3>
-                            </div>
-                        </a>
+                            </a>
+                        </div>
                     {% endfor %}
                 </div>
             </div>
