@@ -46,16 +46,16 @@ h1, h2, h3, h4, h5, h6 {
 
 h1 {
     text-align: center;
-    font-size: clamp(3rem,calc(1rem + 3vw),4rem);
+    font-size: clamp(2rem,calc(1rem + 3vw),4rem);
 }
 
 h2 {
     text-align: center;
-    font-size: clamp(2rem,calc(1rem + 2vw),3.4rem);
+    font-size: clamp(1.6rem,calc(1rem + 2vw),3.4rem);
 }
 
 h3 {
-    font-size: clamp(1.6rem,calc(1rem + 1vw),2.6rem);
+    font-size: clamp(1.2rem,calc(1rem + 1vw),2.6rem);
 }
 
 a {
