@@ -1,5 +1,5 @@
 <div class="c-search__search-wrapper {{ 'c-search__search-wrapper--home' if homeSearch }}" x-data="{ searchResults: [], searchInput: '', matches: [] }">
-    <label for="{{ 'search-home' if homeSearch else 'search' }}" class="c-search__label {{ 'c-search__label--home' if homeSearch }}">{{ site.searchLabel }} :</label>
+    <label for="{{ 'search-home' if homeSearch else 'search' }}" class="c-search__label {{ 'c-search__label--home' if homeSearch }}">{{ site.searchLabel }}&nbsp;:</label>
     <div class="c-search__input-wrapper {{ 'c-search__input-wrapper--home' if homeSearch }}">
         <input type="text" id="{{ 'search-home' if homeSearch else 'search' }}" class="c-search__input {{ 'c-search__input--home' if homeSearch }}" x-model="searchInput" @focus="
             if (!window.searchResults) {
