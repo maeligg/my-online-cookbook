@@ -1,15 +1,15 @@
 <nav>
     <ul class="c-tags">
         {% if page.fileSlug == "recipes" %}
-            <span class="c-tags__tag c-tag__tag--selected">All recipes</span>
+            <li class="c-tags__tag c-tag__tag--selected">All recipes</li>
         {% else %}
-            <a class="c-tags__tag" href="/recipes">All recipes</a>
+            <li><a class="c-tags__tag" href="/recipes">All recipes</a></li>
         {% endif %}
         {% for tagItem in collections.tagList %}
             {% if selectedTag == tagItem %}
-                <span class="c-tags__tag c-tag__tag--selected">{{ tagItem }}</span>
+                <li class="c-tags__tag c-tag__tag--selected">{{ tagItem }}</li>
             {% else %}
-                <a class="c-tags__tag" href="/tags/{{ tagItem | noEmoji | slug }}">{{ tagItem }}</a>
+                <li><a class="c-tags__tag" href="/tags/{{ tagItem | noEmoji | slug }}">{{ tagItem }}</a></li>
             {% endif %}
         {% endfor %}
     </ul>
