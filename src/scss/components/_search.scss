@@ -20,6 +20,7 @@
 
 .c-search__search-wrapper:not(.c-search__search-wrapper--home) {
     position: absolute;
+    z-index: 10;
     top: 60px;
     right: 0;
     width: 100%;
