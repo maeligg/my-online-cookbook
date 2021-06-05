@@ -15,8 +15,6 @@ bodyClass: c-home
         <div class="l-container">
             {% set homeSearch = true %}
             {% include "components/search.njk" %}
-            
-            <a x-data="getRandomRecipe()" x-init="initRandomRecipe()" x-bind:href="url" class="c-search__random-link">🔀 {{ randomRecipe }}</a>
         </div>
     </section>
 
@@ -51,25 +49,4 @@ bodyClass: c-home
             </div>
         </section>
     {% endif %}
-
-    <script>
-        function getRandomRecipe() {
-            return {
-                url: '',
-                initRandomRecipe() {
-                    const random = (recipes) => recipes[Math.floor(Math.random() * recipes.length)];
-
-                    if (sessionStorage.getItem('searchResults')) {
-                        this.url = random(JSON.parse(sessionStorage.getItem('searchResults'))).url;
-                    } else {
-                        fetch('/search.json').then(res => res.json()).then(res => {
-                            sessionStorage.setItem('searchResults', JSON.stringify(res));
-                            this.url = random(res).url;
-                        });
-                    }
-                }
-
-            }
-        }
-    </script>
 {% endblock %}

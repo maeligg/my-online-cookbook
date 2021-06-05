@@ -122,21 +122,3 @@
 .c-search__search-result-ingredients--home {
     font-size: 1rem;
 }
-
-.c-search__random-link {
-    display: block;
-    width: max-content;
-    margin: 10px auto 0;
-    padding: 6px 10px;
-    border: none;
-    border-radius: 4px;
-    background-color: var(--color-grey-900);
-    color: var(--color-white);
-    font-weight: bold;
-    text-decoration: none;
-
-    &:hover, &:focus {
-        text-decoration: none;
-        background-color: var(--color-grey-800);
-    }
-}
