@@ -18,12 +18,12 @@ bodyClass: c-home
         </div>
     </section>
 
-    {% if collections["Favourite ⭐"] %}
+    {% if collections[highlightedTag] %}
         <section class="u-bgc-grey-100">
             <div class="l-container">
-                <h2 class="u-mb-large">{{ favouriteRecipes }}</h2>
+                <h2 class="u-mb-large">{{ highlightedTitle }}</h2>
                 <div class="c-card__wrapper">
-                    {% set favouriteRecipes = collections["Favourite ⭐"] | limit(4) %}
+                    {% set favouriteRecipes = collections[highlightedTag] | limit(4) %}
                     {% for recipe in favouriteRecipes %}
                         <div class="c-card">
                             {% recipeimage recipe.data.image, "c-card__image", recipe.data.title, "(min-width: 1150px) 25vw, (min-width: 850px) 33vw, (min-width: 550px) 50vw, 100vw" %}
@@ -46,6 +46,7 @@ bodyClass: c-home
                         </div>
                     {% endfor %}
                 </div>
+                <a href="/tags/{{ highlightedTag | noEmoji | slug }}" class="c-home__highlighted-tag-link">{{ highlightedLinkText }}</a>
             </div>
         </section>
     {% endif %}

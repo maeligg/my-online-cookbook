@@ -62,8 +62,9 @@ collections:
         - {label: "Title", name: "title", widget: "string"}
         - {label: "Add author to title", name: "authorInTitle", widget: "boolean"}
         - {label: "Meta title", name: "metaTitle", widget: "string", hint: "used for SEO"}
-        - {label: "Favourite recipes label", name: "favouriteRecipes", widget: "string"}
-        - {label: "Random recipe label", name: "randomRecipe", widget: "string"}
+        - {label: "Highlighted tag", name: "highlightedTag", widget: "string", hint: "This must correspond to one of your recipes' tag !"}
+        - {label: "Title of the highlighted tag section (label)", name: "highlightedTitle", widget: "string"}
+        - {label: "Link text to all recipes with the highlighted tag (label)", name: "highlightedLinkText", widget: "string"}
     - name: "recipes"
       label: "All recipes page"
       file: "src/recipes.md"
