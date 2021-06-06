@@ -4,6 +4,7 @@ image: /recipe-images/brownies.jpg
 tags:
   - Sweet 🍬
   - Cake 🍰
+  - Vegetarian 🌿
   - Sharable
   - Favourite ⭐
 time: 45 min
