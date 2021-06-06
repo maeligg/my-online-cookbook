@@ -41,7 +41,9 @@ collections:
           - {label: "Author", name: "author", widget: "string"}
           - {label: "Primary color", name: "primaryColor", widget: "color", hint: "make sure to choose a color that is light enough to display as a background behind dark text"}
           - {label: "Secondary color", name: "secondaryColor", widget: "color", hint: "used for links and focus styles"}
-          - {label: "Search label", name: "searchLabel", widget: "string"}
+          - {label: "Search (label)", name: "searchLabel", widget: "string"}
+          - {label: "Servings (label)", name: "servingsLabel", widget: "string"}
+          - {label: "Ingredients (label)", name: "ingredientsLabel", widget: "string"}
       - name: "nav"
         label: "Navigation"
         delete: false
@@ -70,6 +72,11 @@ collections:
       file: "src/recipes.md"
       fields:
         - {label: "Title", name: "title", widget: "string"}
+    - name: "tags"
+      label: "Tags pages"
+      file: "src/tag.md"
+      fields:
+        - {label: "All recipes (label)", name: "allRecipesLabel", widget: "string"}
     - name: "about"
       label: "About page"
       file: "src/about.md"

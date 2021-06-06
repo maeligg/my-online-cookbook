@@ -4,7 +4,7 @@
     <main>
         <section>
             <div class="l-container">
-                <h1>{{ selectedTag }}{{ " " if selectedTag }}{{title}}</h1>
+                <h1>{{ selectedTag }}{{ title }}</h1>
 
                 {% if not selectedTag %}
                     {% include 'components/taglist.njk' %}
