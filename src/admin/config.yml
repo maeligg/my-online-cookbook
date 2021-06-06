@@ -52,7 +52,6 @@ collections:
             widget: "list"
             fields:
               - {label: "Text", name: "text", widget: "string"}
-              - {label: "Url", name: "url", widget: "string"}
   - name: "pages"
     label: "Pages"
     files:
