@@ -4,7 +4,8 @@
     "author": "John Doe",
     "primaryColor": "#ffdb70",
     "secondaryColor": "#32816e",
-    "searchLabel": "Find recipes by name or ingredients",
+    "searchLabel": "Find recipes by name, tag or ingredients",
+    "searchContainsLabel": "Contains",
     "servingsLabel": "servings",
     "ingredientsLabel": "Ingredients"
 }

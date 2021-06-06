@@ -7,7 +7,8 @@ permalink: search.json
         {
             "title" : "{{ recipe.data.title }}",
             "url" : "{{ recipe.url }}",
-            "ingredients" : [{% for ingredient in recipe.data.ingredients %}"{{ingredient}}"{% if not loop.last %},{% endif %}{% endfor %}]
+            "ingredients" : [{% for ingredient in recipe.data.ingredients %}"{{ingredient}}"{% if not loop.last %},{% endif %}{% endfor %}],
+            "tags" : [{% for tag in recipe.data.tags %}"{{tag}}"{% if not loop.last %},{% endif %}{% endfor %}]
         }{% if not loop.last %},{% endif %}
     {% endfor %}
 ]

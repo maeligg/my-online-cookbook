@@ -2,25 +2,15 @@
     <label for="{{ 'search-home' if homeSearch else 'search' }}" class="c-search__label {{ 'c-search__label--home' if homeSearch }}">{{ site.searchLabel }}&nbsp;:</label>
     <div class="c-search__input-wrapper {{ 'c-search__input-wrapper--home' if homeSearch }}">
         <input type="text" id="{{ 'search-home' if homeSearch else 'search' }}" class="c-search__input {{ 'c-search__input--home' if homeSearch }}" x-model="searchInput" @focus="
-            if (!window.searchResults) {
-                fetch('/search.json').then(res => res.json()).then(res => {
-                    window.searchResults = res;
-                    searchResults = window.searchResults;
-                });
-            } else {
-                searchResults = window.searchResults;
-            }
-
             if (sessionStorage.getItem('searchResults')) {
                 searchResults = JSON.parse(sessionStorage.getItem('searchResults'));
             } else {
                 fetch('/search.json').then(res => res.json()).then(res => {
                     sessionStorage.setItem('searchResults', JSON.stringify(res));
-                    searchResults = random(res);
+                    searchResults = JSON.stringify(res);
                 });
             }
         " @input="
-            console.log(searchInput);
             matches = [];
 
             if (searchInput.length < 3) { return };
@@ -28,12 +18,14 @@
             searchResults.forEach(recipe => {
                 const matchTitle = recipe.title.toLowerCase().includes(searchInput);
                 const matchIngredient = recipe.ingredients.find(ingredient => ingredient.toLowerCase().includes(searchInput));
+                const matchTag = recipe.tags.find(tag => tag.toLowerCase().includes(searchInput));
         
-                if (!matchTitle && !matchIngredient) { return };
+                if (!matchTitle && !matchIngredient && !matchTag) { return };
         
                 const match = {...recipe};
                 if (matchTitle) { match.matchTitle = matchTitle };
                 if (matchIngredient) { match.matchIngredient = matchIngredient };
+                if (matchTag) { match.matchTag = matchTag };
         
                 matches.push(match)
             });
@@ -49,18 +41,25 @@
     </div>
 
     <template x-if="matches.length">
-        <ul class="c-search__search-results">
-            <template x-for="(match, index) in matches" :key="index">
-                <li>
-                    <a x-bind:href="match.url" x-html="highlightText(match.title, searchInput)" class="c-search__search-result-link {{ 'c-search__search-result-link--home' if homeSearch }}"></a>
-                    <template x-if="match.matchIngredient">
-                        <p class="c-search__search-result-ingredients {{ 'c-search__search-result-ingredients--home' if homeSearch }}" >
-                            Contains: <span x-html="highlightText(match.matchIngredient, searchInput)"></span>
-                        </p>
-                    </template>
-                </li>
-            </template>
-        </ul>
+        <div class="c-search__results-wrapper">
+            <ul class="c-search__results {{ 'c-search__results--home' if homeSearch }}">
+                <template x-for="(match, index) in matches" :key="index">
+                    <li>
+                        <div class="c-search__result-link {{ 'c-search__result-link--home' if homeSearch }}">
+                            <a x-bind:href="match.url" x-html="highlightText(match.title, searchInput)"></a>
+                            <template x-if="match.matchTag">
+                                <div class="c-tags__tag c-tag__tag--selected" x-html="highlightText(match.matchTag, searchInput)"></div>
+                            </template>
+                        </div>
+                        <template x-if="match.matchIngredient">
+                            <p class="c-search__result-ingredients {{ 'c-search__result-ingredients--home' if homeSearch }}" >
+                                {{ site.searchContainsLabel }}: <span x-html="highlightText(match.matchIngredient, searchInput)"></span>
+                            </p>
+                        </template>
+                    </li>
+                </template>
+            </ul>
+        </div>
     </template>
 </div>
 
