@@ -1,7 +1,7 @@
 .c-recipe__header-image {
     width: 100%;
     object-fit: cover;
-    height: 40vh;
+    height: 50vh;
     min-height: 300px;
     background-color: var(--color-grey-500); // fallback while image is loading
 }
@@ -43,7 +43,6 @@
         grid-template-areas:
             "ingredients tags"
             "ingredients instructions";
-        gap: 18px;
     }
 }
 
