@@ -17,7 +17,7 @@
 .c-nav__list {
     display: flex;
     align-items: center;
-    gap: 20px;
+    gap: 15px;
 }
 
 .c-nav__logo svg {
@@ -50,6 +50,7 @@
 
 .c-nav__nav-item {
     padding: 4px 8px;
+    display: flex;
     color: var(--color-grey-900);
     text-decoration: none;
 
