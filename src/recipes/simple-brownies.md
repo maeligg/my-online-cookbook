@@ -1,6 +1,6 @@
 ---
 title: Simple brownies
-image: /recipe-images/brownies.jpg
+image: /img/recipes/brownies.jpg
 tags:
   - Sweet 🍬
   - Cake 🍰

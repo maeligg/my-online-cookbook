@@ -1,6 +1,6 @@
 ---
 title: Coconut lentil soup
-image: /recipe-images/coconut-lentil-soup.jpg
+image: /img/recipes/coconut-lentil-soup.jpg
 tags:
     - Soup 🥣
     - Vegetarian 🌿

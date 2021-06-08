@@ -1,8 +1,8 @@
 backend:
   name: git-gateway
   branch: main
-media_folder: "src/recipe-images"
-public_folder: "/recipe-images"
+media_folder: "src/img/recipes"
+public_folder: "/img/recipes"
 
 collections:
   - name: "recipes"

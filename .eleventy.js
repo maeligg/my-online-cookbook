@@ -71,8 +71,8 @@ module.exports = config => {
         let metadata = await Image(`./src/${src}`, {
             widths: [600, 1500, 3000],
             formats: ['webp', 'jpeg'],
-            outputDir: './_site/recipe-images',
-            urlPath: '/recipe-images/'
+            outputDir: './_site/img/recipes',
+            urlPath: '/img/recipes/'
         });
     
         let imageAttributes = {
