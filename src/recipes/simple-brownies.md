@@ -1,6 +1,6 @@
 ---
 title: Simple brownies
-image: /img/recipes/brownies.jpg
+image: https://ichef.bbci.co.uk/food/ic/food_16x9_1600/recipes/richchocolatebrownie_1933_16x9.jpg
 tags:
   - Sweet 🍬
   - Cake 🍰
