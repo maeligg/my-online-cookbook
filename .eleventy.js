@@ -68,7 +68,7 @@ module.exports = config => {
 
     /* Shortcodes */
     const imageShortcode = async (src, className, alt, sizes) => {
-        let metadata = await Image(`./src/${src}`, {
+        let metadata = await Image(src.includes('http') ? src : `./src/${src}`, {
             widths: [600, 1500, 3000],
             formats: ['webp', 'jpeg'],
             outputDir: './_site/img/recipes',
