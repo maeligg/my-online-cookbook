@@ -11,13 +11,13 @@
                         <a class="c-tags__tag" href="/tags/{{ tag | noEmoji | slug }}">{{ tag }}</a>
                     {% endfor %}
                 </div>
-                <div class="c-recipe__ingredients-wrapper" x-data='{currentServings: {{ servings }}, ingredients: "{{ ingredients | arrayToString }}".split("£") }'>
-                    {% if time or servings %}
+                <div class="c-recipe__ingredients-wrapper" x-data='{currentServings: {{ servings if not servings == "" else false }}, ingredients: "{{ ingredients | arrayToString }}".split("£") }'>
+                    {% if time or not servings == "" %}
                         <div class="c-recipe__additional-info">
                             {% if time %}
                                 <p>{% include "icons/time.svg" %}{{ time }}</p>
                             {% endif %}
-                            {% if servings %}
+                            {% if not servings == "" %}
                                 <p>
                                     <template x-if="currentServings > 1">
                                         <button @click="currentServings -= 1" class="c-recipe__serving-button">
