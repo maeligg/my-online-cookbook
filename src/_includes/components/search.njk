@@ -16,9 +16,9 @@
             if (searchInput.length < 3) { return };
     
             searchResults.forEach(recipe => {
-                const matchTitle = recipe.title.toLowerCase().includes(searchInput);
-                const matchIngredient = recipe.ingredients.find(ingredient => ingredient.toLowerCase().includes(searchInput));
-                const matchTag = recipe.tags.find(tag => tag.toLowerCase().includes(searchInput));
+                const matchTitle = recipe.title.toLowerCase().includes(searchInput.toLowerCase());
+                const matchIngredient = recipe.ingredients.find(ingredient => ingredient.toLowerCase().includes(searchInput.toLowerCase()));
+                const matchTag = recipe.tags.find(tag => tag.toLowerCase().includes(searchInput.toLowerCase()));
         
                 if (!matchTitle && !matchIngredient && !matchTag) { return };
         
