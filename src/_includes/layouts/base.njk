@@ -8,8 +8,8 @@
     <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 105 55%22><text y=%22.9em%22 font-size=%2275%22>🍽️</text></svg>">
 
     {% if image %}
-      <meta property="og:image" content="{{ image }}" />
-      <meta name="twitter:image" content="{{ image }}" />
+      <meta property="og:image" content="{{ site.baseURL }}{{ image }}" />
+      <meta name="twitter:image" content="{{ site.baseURL }}{{ image }}" />
       <meta property="og:image:alt" content="Page image for {{ title }}" />
       <meta name="twitter:image:alt" content="Page image for {{ title }}" />
     {% endif %}

@@ -7,5 +7,6 @@
     "searchLabel": "Find recipes by name, tag or ingredients",
     "searchContainsLabel": "Contains",
     "servingsLabel": "servings",
-    "ingredientsLabel": "Ingredients"
+    "ingredientsLabel": "Ingredients",
+    "baseURL": "https://myonlinecookbook.netlify.app"
 }
