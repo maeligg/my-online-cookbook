@@ -7,7 +7,7 @@ bodyClass: c-home
 {% block content %}
     <section>
         <div class="l-container">
-            <h1>{{title}}{% if authorInTitle %} <span class="c-home__title-author">{{ site.author }}</span>{% endif %}</h1>
+            <h1>{{title}}{% if authorInTitle %} {{ site.author }}{% endif %}</h1>
         </div>
     </section>
 
