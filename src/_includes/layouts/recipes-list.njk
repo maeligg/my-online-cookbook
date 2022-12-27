@@ -15,28 +15,30 @@
             <div class="l-container">
                 <div class="c-card__wrapper">
                     {% for recipe in collections.recipes %}
-                        <div class="c-card">
-                            {% recipeimage recipe.data.image, "c-card__image", recipe.data.title, "(min-width: 1150px) 25vw, (min-width: 850px) 33vw, (min-width: 550px) 50vw, 100vw" %}
-                            <div class="c-card__info">
-                                {% if not recipe.data.tags | length %}
-                                    <div>
-                                        {% for tag in recipe.data.tags %}
-                                            <abbr class="c-card__tag-abbr" title="{{ tag | noEmoji }}">{{ tag | onlyEmoji | safe }}</abbr>
-                                        {% endfor %}
-                                    </div>
+                        {% if not selectedTag or selectedTag in recipe.data.tags %} {# If we don't have a selectedTag, we are on the all recipes page #}
+                            <div class="c-card">
+                                {% recipeimage recipe.data.image, "c-card__image", recipe.data.title, "(min-width: 1150px) 25vw, (min-width: 850px) 33vw, (min-width: 550px) 50vw, 100vw" %}
+                                <div class="c-card__info">
+                                    {% if not recipe.data.tags | length %}
+                                        <div>
+                                            {% for tag in recipe.data.tags %}
+                                                <abbr class="c-card__tag-abbr" title="{{ tag | noEmoji }}">{{ tag | onlyEmoji | safe }}</abbr>
+                                            {% endfor %}
+                                        </div>
 
-                                {% endif %}
-                                {% if recipe.data.time %}
-                                    <div class="card__time">
-                                        {% include 'icons/time.svg' %}
-                                        {{ recipe.data.time }}
-                                    </div>
-                                {% endif %}
+                                    {% endif %}
+                                    {% if recipe.data.time %}
+                                        <div class="card__time">
+                                            {% include 'icons/time.svg' %}
+                                            {{ recipe.data.time }}
+                                        </div>
+                                    {% endif %}
+                                </div>
+                                <a class="c-card__title-wrapper" href="{{ recipe.url }}">
+                                    <h3 class="c-card__title">{{ recipe.data.title }}</h3>
+                                </a>
                             </div>
-                            <a class="c-card__title-wrapper" href="{{ recipe.url }}">
-                                <h3 class="c-card__title">{{ recipe.data.title }}</h3>
-                            </a>
-                        </div>
+                        {% endif %}
                     {% endfor %}
                 </div>
             </div>
