@@ -63,7 +63,7 @@ module.exports = config => {
 
     // This workaround is needed so we can transform it back into an array with Alpine (we can't split on "," as it can be included within the items)
     config.addFilter('arrayToString', function(value) {
-        return value.join('£');
+        return encodeURI(value.join('£'));
     });
 
     /* Shortcodes */
